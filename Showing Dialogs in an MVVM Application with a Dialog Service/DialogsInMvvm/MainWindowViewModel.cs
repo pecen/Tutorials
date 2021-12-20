@@ -19,7 +19,12 @@ namespace DialogsInMvvm
 
         private void ExecuteShowDialog()
         {
-            _dialogService.ShowDialog("Notification", result =>
+            //_dialogService.ShowDialog("Notification", result =>
+            //{
+            //    var test = result;
+            //});
+
+            _dialogService.ShowDialog<NotificationViewModel>(result =>
             {
                 var test = result;
             });

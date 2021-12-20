@@ -9,7 +9,7 @@ namespace DialogsInMvvm
     public interface IDialogService
     {
         void ShowDialog(string name, Action<string> callback);
-        void ShowDialog<ViewModel>(Action<string> callback);
+        void ShowDialog<TViewModel>(Action<string> callback);
     }
 
     public class DialogService : IDialogService
@@ -31,6 +31,8 @@ namespace DialogsInMvvm
         public void ShowDialog<TViewModel>(Action<string> callback)
         {
             var type = _mappings[typeof(TViewModel)];
+
+            ShowDialogInternal(type, callback);
         }
 
         private static void ShowDialogInternal(Type type, Action<string> callback)
