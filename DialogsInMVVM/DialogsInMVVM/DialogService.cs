@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DialogsInMVVM
 {
@@ -32,10 +33,10 @@ namespace DialogsInMVVM
         {
             var type = _mappings[typeof(TViewModel)];
 
-            ShowDialogInternal(type, callback);
+            ShowDialogInternal(type, callback, typeof(TViewModel));
         }
 
-        private static void ShowDialogInternal(Type type, Action<string> callback)  // string name, Action<string> callback)
+        private static void ShowDialogInternal(Type type, Action<string> callback, Type vmType = null)  // string name, Action<string> callback)
         {
             var dialog = new DialogWindow();
 
@@ -48,8 +49,15 @@ namespace DialogsInMVVM
             dialog.Closed += closeEventHandler;
 
             //var type = Type.GetType($"DialogsInMVVM.{name}");
+            var content = Activator.CreateInstance(type);
 
-            dialog.Content = Activator.CreateInstance(type);
+            if (vmType != null)
+            {
+                var vm = Activator.CreateInstance(vmType);
+                (content as FrameworkElement).DataContext = vm;
+            }
+
+            dialog.Content = content; // Activator.CreateInstance(type);
 
             dialog.ShowDialog();
         }
