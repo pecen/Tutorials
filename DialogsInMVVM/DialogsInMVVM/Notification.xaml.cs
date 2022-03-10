@@ -16,15 +16,19 @@ using System.Windows.Shapes;
 namespace DialogsInMVVM
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Notification.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Notification : UserControl
     {
-        public MainWindow()
+        public Notification()
         {
             InitializeComponent();
+        }
 
-            DialogService.RegisterDialog<Notification, NotificationViewModel>();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = Parent as Window;
+            window.DialogResult = true;
         }
     }
 }
