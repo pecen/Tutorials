@@ -23,8 +23,6 @@ namespace DialogsInMvvm
         public MainWindow()
         {
             InitializeComponent();
-
-            DialogService.RegisterDialog<Notification, NotificationViewModel>();
         }
     }
 }

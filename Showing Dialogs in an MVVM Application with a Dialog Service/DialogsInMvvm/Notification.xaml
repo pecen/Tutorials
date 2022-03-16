@@ -9,5 +9,6 @@
     <StackPanel>
         <TextBlock Text="This is a Notification" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" />
         <Button Click="Button_Click">Close Me</Button>
+        <!--<Button Command="{Binding CloseDialogCommand}" CommandParameter="{RelativeSource Mode=FindAncestor, AncestorType=Window}">Close Me</Button>-->
     </StackPanel>
 </UserControl>

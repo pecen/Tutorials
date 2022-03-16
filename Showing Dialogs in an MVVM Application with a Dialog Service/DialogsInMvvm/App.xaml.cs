@@ -13,5 +13,9 @@ namespace DialogsInMvvm
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            DialogService.RegisterDialog<Notification, NotificationViewModel>();
+        }
     }
 }
