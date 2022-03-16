@@ -10,7 +10,7 @@ namespace DialogsInMVVM
     public interface IDialogService
     {
         void ShowDialog(string name, Action<string> callback);
-        void ShowDialog<ViewModel>(Action<string> callback);
+        void ShowDialog<TViewModel>(Action<string> callback);
     }
 
     public class DialogService : IDialogService
