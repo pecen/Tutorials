@@ -14,3 +14,8 @@ Different tutorials, mostly picked up from Youtube
 	- Folder: DialogsInMVVM
 	- Solution name: DialogsInMVVM.sln
 	- Framework: .Net 4.8
+
+4. Wpf C# How To Create Your Own Modern VPN Tutorial - Added 220602, from YouTube: https://www.youtube.com/watch?v=rhFSR6XHApw
+	- Folder: Wpf Modern VPN Tutorial
+	- Solution name: ModernVPN.sln
+	- Framework: .Net 6.0
