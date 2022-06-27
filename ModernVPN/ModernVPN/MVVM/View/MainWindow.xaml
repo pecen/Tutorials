@@ -5,20 +5,20 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ModernVPN"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:ModernVPN.MVVM.ViewModel"
     Title="MainWindow"
     Width="800"
     Height="450"
     AllowsTransparency="True"
     Background="Transparent"
     ResizeMode="CanResize"
-    xmlns:viewModel="clr-namespace:ModernVPN.MVVM.ViewModel"
     WindowStyle="None"
     mc:Ignorable="d">
 
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
-    
+
     <DockPanel Margin="7" Background="#1e1e1e">
 
         <Border
@@ -27,8 +27,7 @@
             DockPanel.Dock="Top">
 
             <Border.InputBindings>
-                <MouseBinding MouseAction="LeftClick"
-                              Command="{Binding MoveWindowCommand}" />
+                <MouseBinding Command="{Binding MoveWindowCommand}" MouseAction="LeftClick" />
             </Border.InputBindings>
 
             <Grid>
@@ -52,24 +51,24 @@
                     Orientation="Horizontal">
 
                     <Button Command="{Binding MinimizeWindowCommand}">
-                    
-                    <Button.Content>
-                    
+
+                        <Button.Content>
+
                             <TextBlock
                                 Margin="0,-7,0,0"
                                 FontStretch="UltraExpanded"
                                 Text="🗕︎" />
-                    
-                    </Button.Content>
-                    
+
+                        </Button.Content>
+
                     </Button>
-                    <Button Content="🗖︎" Command="{Binding MaximizeWindowCommand}" />
-                    <Button Content="🗙︎" Command="{Binding ShutdownWindowCommand}" />
+                    <Button Command="{Binding MaximizeWindowCommand}" Content="🗖︎" />
+                    <Button Command="{Binding ShutdownWindowCommand}" Content="🗙︎" />
 
                     <!--<ToggleButton>
                         <Path Data="{StaticResource WindowClose}" />-->
 
-                        <!--<Button.Content>
+                    <!--<Button.Content>
                             <Grid VerticalAlignment="Center" Margin="10,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
@@ -131,6 +130,7 @@
 
             <StackPanel>
                 <RadioButton
+                    Command="{Binding ShowProtectionView}"
                     Content="VPN"
                     FontSize="16"
                     FontWeight="Normal"
@@ -142,7 +142,8 @@
                     FontWeight="Normal"
                     Foreground="LightGray" />
                 <RadioButton
-                    Content="VPN"
+                    Command="{Binding ShowSettingsView}"
+                    Content="Settings"
                     FontSize="16"
                     FontWeight="Normal"
                     Foreground="LightGray" />

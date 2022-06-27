@@ -15,6 +15,10 @@
             <DataTemplate DataType="{x:Type vm:ProtectionViewModel}">
                 <view:ProtectionView />
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                <view:SettingsView />
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
