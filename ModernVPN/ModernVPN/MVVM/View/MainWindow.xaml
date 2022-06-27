@@ -153,8 +153,9 @@
                     FontWeight="Normal"
                     Foreground="LightGray" />
                 <RadioButton
-                    Command="{Binding ShowSettingsView}" core:Extensions.Icon="⚙️"
                     Padding="6,3.5,4.7,0"
+                    core:Extensions.Icon="⚙️"
+                    Command="{Binding ShowSettingsView}"
                     Content="Settings"
                     FontSize="16"
                     FontWeight="Normal"

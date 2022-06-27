@@ -1,17 +1,21 @@
-﻿<Application x:Class="ModernVPN.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ModernVPN"
-             xmlns:vm="clr-namespace:ModernVPN.MVVM.ViewModel"
-             xmlns:view="clr-namespace:ModernVPN.MVVM.View"
-             StartupUri="MVVM/View/MainWindow.xaml">
+﻿<Application
+    x:Class="ModernVPN.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ModernVPN"
+    xmlns:view="clr-namespace:ModernVPN.MVVM.View"
+    xmlns:vm="clr-namespace:ModernVPN.MVVM.ViewModel"
+    StartupUri="MVVM/View/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Themes -->
+                <!--  Themes  -->
                 <ResourceDictionary Source="/Themes/TitlebarButton.Nord.xaml" />
                 <ResourceDictionary Source="/Themes/MenuButton.Nord.xaml" />
-                <ResourceDictionary Source="/ModernVPN;component/Core/Resources/Styles/ResourceLibrary.xaml" />
+                <ResourceDictionary Source="/Themes/ConnectButton.Nord.xaml" />
+                <ResourceDictionary Source="/Themes/ServerListTheme.Nord.xaml" />
+
+                <ResourceDictionary Source="/Core/Resources/Styles/ResourceLibrary.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type vm:ProtectionViewModel}">
