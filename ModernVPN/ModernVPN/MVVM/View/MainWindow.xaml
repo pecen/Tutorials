@@ -11,14 +11,25 @@
     AllowsTransparency="True"
     Background="Transparent"
     ResizeMode="CanResize"
+    xmlns:viewModel="clr-namespace:ModernVPN.MVVM.ViewModel"
     WindowStyle="None"
     mc:Ignorable="d">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+    
     <DockPanel Margin="7" Background="#1e1e1e">
 
         <Border
             Height="28"
             Background="#252525"
             DockPanel.Dock="Top">
+
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding MoveWindowCommand}" />
+            </Border.InputBindings>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -40,7 +51,7 @@
                     HorizontalAlignment="Right"
                     Orientation="Horizontal">
 
-                    <Button>
+                    <Button Command="{Binding MinimizeWindowCommand}">
                     
                     <Button.Content>
                     
@@ -52,8 +63,8 @@
                     </Button.Content>
                     
                     </Button>
-                    <Button Content="🗖︎" />
-                    <Button Content="🗙︎" />
+                    <Button Content="🗖︎" Command="{Binding MaximizeWindowCommand}" />
+                    <Button Content="🗙︎" Command="{Binding ShutdownWindowCommand}" />
 
                     <!--<ToggleButton>
                         <Path Data="{StaticResource WindowClose}" />-->
