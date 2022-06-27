@@ -16,6 +16,8 @@ namespace ModernVPN.MVVM.ViewModel
         public RelayCommand MaximizeWindowCommand { get; set; }
         public RelayCommand MinimizeWindowCommand { get; set; }
 
+        public ProtectionViewModel ProtectionVM { get; set; }
+
         private object _currentView;
         public object CurrentView
         {
@@ -29,8 +31,10 @@ namespace ModernVPN.MVVM.ViewModel
 
         public MainViewModel()
         {
-            Application.Current.MainWindow.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            ProtectionVM = new ProtectionViewModel();
+            CurrentView = ProtectionVM;
 
+            Application.Current.MainWindow.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
             MoveWindowCommand = new RelayCommand(o => { Application.Current.MainWindow.DragMove(); });
             ShutdownWindowCommand = new RelayCommand(o => { Application.Current.Shutdown(); });
             MaximizeWindowCommand = new RelayCommand(o =>
