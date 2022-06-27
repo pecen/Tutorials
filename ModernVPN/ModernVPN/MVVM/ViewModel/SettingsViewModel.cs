@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModernVPN.MVVM.ViewModel
 {
-    internal class SettingsViewModel
+    public class SettingsViewModel
     {
         public SettingsViewModel()
         {

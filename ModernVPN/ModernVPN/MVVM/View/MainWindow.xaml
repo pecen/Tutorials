@@ -2,6 +2,7 @@
     x:Class="ModernVPN.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="clr-namespace:ModernVPN.Core"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ModernVPN"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -50,20 +51,27 @@
                     HorizontalAlignment="Right"
                     Orientation="Horizontal">
 
+                    <!--<Button Content="_" Margin="0,-5,0,0" Command="{Binding MinimizeWindowCommand}">-->
                     <Button Command="{Binding MinimizeWindowCommand}">
 
                         <Button.Content>
 
                             <TextBlock
-                                Margin="0,-7,0,0"
+                                Margin="0,-9,0,0"
                                 FontStretch="UltraExpanded"
                                 Text="🗕︎" />
 
                         </Button.Content>
 
                     </Button>
-                    <Button Command="{Binding MaximizeWindowCommand}" Content="🗖︎" />
-                    <Button Command="{Binding ShutdownWindowCommand}" Content="🗙︎" />
+                    <Button
+                        Padding="0,0,0,3"
+                        Command="{Binding MaximizeWindowCommand}"
+                        Content="🗖︎" />
+                    <Button
+                        Padding="0,0,0,2"
+                        Command="{Binding ShutdownWindowCommand}"
+                        Content="🗙︎" />
 
                     <!--<ToggleButton>
                         <Path Data="{StaticResource WindowClose}" />-->
@@ -130,6 +138,8 @@
 
             <StackPanel>
                 <RadioButton
+                    Padding="7.6,3.5,8,0"
+                    core:Extensions.Icon="&#128737;"
                     Command="{Binding ShowProtectionView}"
                     Content="VPN"
                     FontSize="16"
@@ -137,12 +147,14 @@
                     Foreground="LightGray"
                     IsChecked="True" />
                 <RadioButton
+                    core:Extensions.Icon="💘"
                     Content="VPN"
                     FontSize="16"
                     FontWeight="Normal"
                     Foreground="LightGray" />
                 <RadioButton
-                    Command="{Binding ShowSettingsView}"
+                    Command="{Binding ShowSettingsView}" core:Extensions.Icon="⚙️"
+                    Padding="6,3.5,4.7,0"
                     Content="Settings"
                     FontSize="16"
                     FontWeight="Normal"

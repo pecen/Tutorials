@@ -9,6 +9,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- Themes -->
+                <ResourceDictionary Source="/Themes/TitlebarButton.Nord.xaml" />
+                <ResourceDictionary Source="/Themes/MenuButton.Nord.xaml" />
                 <ResourceDictionary Source="/ModernVPN;component/Core/Resources/Styles/ResourceLibrary.xaml" />
             </ResourceDictionary.MergedDictionaries>
 

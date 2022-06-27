@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace ModernVPN.MVVM.ViewModel
 {
-    internal class MainViewModel : ObservableObject
+    public class MainViewModel : ObservableObject
     {
         // Commands
         public RelayCommand MoveWindowCommand { get; set; }
@@ -18,6 +18,7 @@ namespace ModernVPN.MVVM.ViewModel
         public RelayCommand ShowProtectionView { get; set; }
         public RelayCommand ShowSettingsView { get; set; }
 
+        // The ViewModels
         public ProtectionViewModel ProtectionVM { get; set; }
         public SettingsViewModel SettingsVM { get; set; }
 
