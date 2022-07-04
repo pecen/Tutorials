@@ -50,7 +50,8 @@
             Grid.Row="1"
             Width="250"
             Height="45"
-            Content="Connect" Command="{Binding ConnectCommand}"
+            Command="{Binding ConnectCommand}"
+            Content="{Binding ConnectionText}"
             Style="{StaticResource ConnectButtonStyle}" />
     </Grid>
 </UserControl>

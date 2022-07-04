@@ -147,6 +147,7 @@
                     Foreground="LightGray"
                     IsChecked="True" />
                 <RadioButton
+                    Padding="6,3.5,4.7,0"
                     core:Extensions.Icon="💘"
                     Content="VPN"
                     FontSize="16"
