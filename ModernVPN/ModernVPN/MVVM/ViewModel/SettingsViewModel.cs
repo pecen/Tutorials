@@ -8,6 +8,8 @@ namespace ModernVPN.MVVM.ViewModel
 {
     public class SettingsViewModel
     {
+        public GlobalViewModel Global { get; } = GlobalViewModel.Instance;
+
         public SettingsViewModel()
         {
 

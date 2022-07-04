@@ -10,11 +10,20 @@
     Background="#1E1E1E"
     mc:Ignorable="d">
     <Grid>
+        <StackPanel VerticalAlignment="Center">
         <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="28"
             Foreground="LightGray"
             Text="SettingsView" />
+
+            <CheckBox IsChecked="{Binding Global.IsAwesome}"
+                  Grid.Row="1"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Content="IsAwesome" Foreground="White"/>
+
+        </StackPanel>
     </Grid>
 </UserControl>

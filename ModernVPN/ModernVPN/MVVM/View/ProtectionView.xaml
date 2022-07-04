@@ -12,7 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="120" />
         </Grid.RowDefinitions>
 
         <Image
@@ -39,19 +39,43 @@
             ItemsSource="{Binding Servers}"
             ScrollViewer.CanContentScroll="False" />
 
-        <TextBlock
-            Grid.Row="1"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Foreground="White"
-            Text="{Binding ConnectionStatus}" />
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock
+                Grid.Row="1" Margin="0,5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Foreground="White"
+                Text="{Binding ConnectionStatus}" />
 
-        <Button
-            Grid.Row="1"
-            Width="250"
-            Height="45"
-            Command="{Binding ConnectCommand}"
-            Content="{Binding ConnectionText}"
-            Style="{StaticResource ConnectButtonStyle}" />
+            <Button
+                Grid.Row="1"
+                Width="250"
+                Height="45"
+                Command="{Binding ConnectCommand}"
+                Content="{Binding ConnectionText}"
+                Style="{StaticResource ConnectButtonStyle}" />
+
+            <!--<CheckBox IsChecked="{Binding Global.IsAwesome}"
+                  Grid.Row="1"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Bottom"
+                  Content="IsAwesome" Foreground="White"/>-->
+
+            <TextBlock
+                Grid.Row="1"
+                Margin="0,5,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Foreground="White"
+                Text="{Binding ExternalIp}" />
+            
+            <TextBlock
+                Grid.Row="1"
+                Margin="0,5,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Foreground="White"
+                Text="{Binding Location}" />
+        </StackPanel>
     </Grid>
 </UserControl>
